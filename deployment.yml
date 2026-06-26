@@ -1,0 +1,19 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: agroo
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: apsu
+  template:
+    metadata:
+      labels:
+        app: apsu
+    spec:
+      containers:
+        - name: agrooo
+          image: myapp:v1
+          ports:
+            - containerPort: 5000
